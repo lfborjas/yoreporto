@@ -7,7 +7,6 @@
 </head>
 
 <body>
-    {{> reports}}
     <script src="//use.typekit.net/kgk4blb.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
 </body>
@@ -51,7 +50,7 @@
         {{/each}}
 </template>
 
-<template name="add">
+<template name="new">
    <div id="add">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -127,12 +126,6 @@
   {{#each reports}}
     {{> report}}
   {{/each}}
-
-  {{#if moreResults}}
-      <div id="showMoreResults" style="margin-left: 25px;">
-          <span class="loading">Loading...</span>
-      </div>
-  {{/if}}
 </div>
 </template>
 
@@ -141,7 +134,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-7 profile">
-            <img src="img/profile.jpg" />
+            <img src="img/anon.jpg" />
             <span>{{author}}</span>
           </div>
 
@@ -154,7 +147,7 @@
 
       </div>
 
-      <img src="img/test.jpg" class="img-responsive" />
+      <img src="{{image_for this}}" class="img-responsive" />
       <div class="content">
 
 

@@ -2,10 +2,15 @@
 var ITEMS_INCREMENT = 3;
 Session.setDefault('itemsLimit', ITEMS_INCREMENT);
 
-Meteor.subscribe('reports', Session.get('itemsLimit'));
+//Meteor.subscribe('reports', Session.get('itemsLimit'));
+
+Template.report.image_for = function(report){
+  return (report.image_data || report.image_url);
+}
+
 
 Template.reports.reports = function() {
-  return Reports.find();
+  return Reports.find({}, {sort: {created_at: -1}});
 }
 
 Template.reports.moreResults = function() {
@@ -37,4 +42,4 @@ function showMoreVisible() {
 }
  
 // run the above func every time the user scrolls
-$(window).scroll(showMoreVisible);
+//$(window).scroll(showMoreVisible);

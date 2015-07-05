@@ -24,6 +24,8 @@ Meteor.methods({
       //do something. Deal with the "all" case?
     });
 
+    data.created_at = new Date();
+
     Reports.insert(data);
   }
 });

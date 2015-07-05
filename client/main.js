@@ -4,9 +4,6 @@ Template.media_list.media = function(){
   return Media.find();
 }
 
-Template.add.rendered = function(){
-}
-
 Template.media_list.rendered = function(){
   var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
   elems.forEach(function(html) {
@@ -22,7 +19,7 @@ function getSelectedMedia(){
   return media;
 }
 
-Template.add.events({
+Template.new.events({
   'click #snap': function(){
     MeteorCamera.getPicture(function(error, data){
 		$("#preview").attr({src: data});	
@@ -31,7 +28,7 @@ Template.add.events({
   ,'click #save': function(){
     var data = {
       description: $("#description").val(),
-      img_data: $("img#preview").attr('src'),
+      image_data: $("img#preview").attr('src'),
       media: getSelectedMedia(),
       isAnonymous: $("#isAnonymous").prop("checked")
     };

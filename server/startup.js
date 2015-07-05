@@ -4,7 +4,7 @@ Meteor.startup(function(){
     Reports.insert({
       created_at: new Date("2015-07-04 00:00:00"),
       description: "GeekGirlMeetup es un éxito en Tegucigalpa",
-      image_url: "",
+      image_url: "img/test.jpg",
       author: null,
       location: {type: "Point", coordinates: [
         87.2167, // longitude
