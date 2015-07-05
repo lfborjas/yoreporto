@@ -1,1 +1,81 @@
-/* CSS declarations go here */
+body {
+  font-family: "proxima-nova", sans-serif;
+  background: #e5e5e5;
+}
+
+.report small {
+  color: #aaa;
+  margin-top: 15px;
+  display: inline-block;
+  font-weight: 100;
+}
+
+.profile img {
+  width: 25px;
+  height: auto;
+  border-radius: 30px;
+  vertical-align: -18px;
+  margin-left: -5px;
+}
+
+.location {
+  padding-top: 5px;
+}
+
+.location span {
+  display: inline-block;
+}
+
+.navbar .glyphicon {
+  vertical-align: -2px;
+}
+
+.location span:first-child {
+  vertical-align: -1px;
+}
+
+.profile {
+  padding-top: 10px;
+}
+
+.plus {
+  margin-right: 10px;
+}
+
+.profile span {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 300;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+img {
+  margin-bottom: 10px;
+}
+
+.report {
+  width: 95%;
+  border-radius: 5px;
+  margin: 0 auto;
+  background: white;
+}
+
+.content {
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
