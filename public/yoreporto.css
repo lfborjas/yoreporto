@@ -157,3 +157,7 @@ hr {
 @media (min-width: 1200px) {
 
 }
+
+.navbar-default{
+  padding-top: 20px;
+}
