@@ -5,7 +5,11 @@ Session.setDefault('itemsLimit', ITEMS_INCREMENT);
 //Meteor.subscribe('reports', Session.get('itemsLimit'));
 
 Template.report.image_for = function(report){
-  return (report.image_data || report.image_url);
+  return (report.image_data || report.image_url || "img/test.jpg");
+}
+
+Template.report.author_for = function(report){
+  return report.author || "Anónimo";
 }
 
 
