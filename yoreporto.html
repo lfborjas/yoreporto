@@ -7,11 +7,179 @@
 </head>
 
 <body>
+    {{> reports}}
+    <script src="//use.typekit.net/kgk4blb.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+</body>
+
+<template name="add">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand back" href="index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Regresar</a>
+          <a href="add.html" class="navbar-right navbar-brand">
+            Crear Reporte
+          </a>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="report form">
+
+      <img src="img/test.jpg" class="img-responsive rounded" />
+
+      <form action="#" method="post">
+        <textarea class="form-control" rows="3" placeholder="Descripción..."></textarea>
+        <div class="row">
+          <div class="col-xs-9">
+            <div class="location">
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span>Tegucigalpa</span>
+            </div>
+          </div>
+
+          <div class="col-xs-3">
+            <button type="button" class="btn btn-success btn-lg pull-right"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
+          </div>
+        </div>
+
+        <hr>
+
+          <h5>Medios/Autoridades</h5>
+          <div class="row">
+            <div class="col-xs-9">
+              <p class="organization">
+                Todos
+              </p>
+            </div>
+
+            <div class="col-xs-3">
+              <div class="checkbox">
+                  <input type="checkbox" class="js-switch pull-right" />
+              </div>
+            </div>
+          </div>
+          <hr> <!-- medio/autoridad -->
+
+        <div class="row">
+          <div class="col-xs-9">
+            <p class="organization">
+              <img src="img/medio01.jpg" class="medio" /> HCH
+            </p>
+          </div>
+
+          <div class="col-xs-3">
+            <div class="checkbox">
+                <input type="checkbox" class="js-switch pull-right" />
+            </div>
+          </div>
+        </div>
+        <hr> <!-- medio/autoridad -->
+
+        <div class="row">
+          <div class="col-xs-9">
+            <p class="organization">
+              <img src="img/medio02.jpg" class="medio" /> El Heraldo
+            </p>
+          </div>
+
+          <div class="col-xs-3">
+            <div class="checkbox">
+                <input type="checkbox" class="js-switch pull-right" />
+            </div>
+          </div>
+        </div>
+        <hr> <!-- medio/autoridad -->
+
+        <div class="row">
+          <div class="col-xs-9">
+            <p class="organization">
+              <img src="img/medio03.jpg" class="medio" /> La Tribuna
+            </p>
+          </div>
+
+          <div class="col-xs-3">
+            <div class="checkbox">
+                <input type="checkbox" class="js-switch pull-right" />
+            </div>
+          </div>
+        </div>
+        <hr> <!-- medio/autoridad -->
+
+        <div class="row">
+          <div class="col-xs-9">
+            <p class="organization">
+              <img src="img/medio04.jpg" class="medio" /> La Prensa
+            </p>
+          </div>
+
+          <div class="col-xs-3">
+            <div class="checkbox">
+                <input type="checkbox" class="js-switch pull-right" />
+            </div>
+          </div>
+        </div>
+        <hr> <!-- medio/autoridad -->
+
+        <div class="row">
+          <div class="col-xs-9">
+            <p class="organization">
+              <img src="img/medio05.jpg" class="medio" /> Abriendo Brecha
+            </p>
+          </div>
+
+          <div class="col-xs-3">
+            <div class="checkbox">
+                <input type="checkbox" class="js-switch pull-right" />
+            </div>
+          </div>
+        </div>
+        <hr> <!-- medio/autoridad -->
+
+        <div class="row">
+          <div class="col-xs-9">
+            <p class="organization">
+              <img src="img/medio06.jpg" class="medio" /> Frente a Frente
+            </p>
+          </div>
+
+          <div class="col-xs-3">
+            <div class="checkbox">
+                <input type="checkbox" class="js-switch pull-right" />
+            </div>
+          </div>
+        </div>
+        <hr> <!-- medio/autoridad -->
+
+
+        <h5>¿Compartir información personal?</h5>
+      <div class="row">
+        <div class="col-xs-9">
+          <p class="organization">
+            Anónimo
+          </p>
+        </div>
+
+        <div class="col-xs-3">
+          <div class="checkbox">
+              <input type="checkbox" class="js-switch pull-right" checked />
+          </div>
+        </div>
+      </div>
+      <hr> <!-- medio/autoridad -->
+
+      </form>
+
+      <button type="button" class="btn btn-primary btn-lg btn-block">Enviar</button>
+
+    </div>
+</template>
+
+<template name="reports">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">YoReporto</a>
-          <a href="#">
+          <a href="/new">
             <button type="button" class="btn btn-default navbar-btn navbar-right pull-right plus">
               <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
@@ -19,14 +187,6 @@
         </div>
       </div><!-- /.container-fluid -->
     </nav>
-
-    {{> reports}}
-
-    <script src="//use.typekit.net/kgk4blb.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
-</body>
-
-<template name="reports">
   {{#each reports}}
     {{> report}}
   {{/each}}

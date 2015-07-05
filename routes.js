@@ -3,4 +3,4 @@ Router.route('/', function(){
 });
 
 Router.route('/reports');
-Router.route('/new');
+Router.route('/new', function(){ this.render('add'); });
