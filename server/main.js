@@ -11,10 +11,12 @@ Meteor.publish('media', function(){return Media.find(); });
 Meteor.methods({
   createReport: function(data){
     //TODO: do geocoding?
+	/*
     data.location = {type: "Point", coordinates: [
       data.coords.longitude,
       data.coords.latitude
-    ]};  
+	]};
+	*/
 
     if(data.isAnonymous){
       data.author = null;
