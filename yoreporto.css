@@ -14,12 +14,27 @@ form small {
   margin-top: 0px !important;
 }
 
+h5 {
+  text-align: center;
+}
+
+form p {
+  font-size: 1.5em;
+  font-weight: bolder;
+  padding: 0;
+  margin: 0;
+}
+
 .profile img {
   width: 25px;
   height: auto;
   border-radius: 30px;
   vertical-align: -18px;
   margin-left: -5px;
+}
+
+.medio {
+  width: 40px;
 }
 
 .location {
@@ -84,6 +99,7 @@ textarea {
 
 .organization {
   border-bottom: none;
+  padding-top: 10px;
 }
 
 form .location {
