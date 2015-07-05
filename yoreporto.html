@@ -9,7 +9,7 @@
 <template name="reports">
   <ul id="reports">
     {{#each reports}}
-      {{> report}}
+      <li>{{> report}}</li>
     {{/each}}
   </ul>
 
@@ -21,6 +21,6 @@
 </template>
 
 <template name="report">
-  {{name}} 
+  {{description}} 
 </template>
 
