@@ -38,6 +38,21 @@ function getSelectedMedia(){
   return media;
 }
 
+Template.media_list.events({
+  'change #all_media': function(){
+    var $this = $("#all_media")[0];
+    if($this.checked){
+      $(".media-contact").each(function(i,e){
+        if(!$(e)[0].checked) $(e).trigger('click');
+      })
+    }else{
+      $(".media-contact").each(function(i,e){
+        if($(e)[0].checked) $(e).trigger('click');
+      })
+    }
+  }
+});
+
 Template.new.events({
   'click #snap': function(){
     MeteorCamera.getPicture(function(error, data){
