@@ -10,6 +10,12 @@ body {
   font-weight: 100;
 }
 
+.btn-default {
+  background: #ff4020;
+  border: 1px solid #ea3b1d;
+  color: white;
+}
+
 form small {
   margin-top: 0px !important;
 }
@@ -31,6 +37,14 @@ form p {
   border-radius: 30px;
   vertical-align: -18px;
   margin-left: -5px;
+}
+
+.btn-group .glyphicon {
+  color: #ddd;
+}
+
+.btn-group .active {
+  color: #ff4020;
 }
 
 .medio {
@@ -113,7 +127,7 @@ hr {
 
 .back {
   font-size: 1em;
-  color: #337ab7 !important;
+  color: #ff4020 !important;
   font-weight: 300;
 }
 

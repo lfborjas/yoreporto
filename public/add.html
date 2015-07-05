@@ -16,7 +16,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand back" href="index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Regresar</a>
-          <a href="add.html" class="navbar-right navbar-brand">
+          <a href="#" class="navbar-right navbar-brand">
             Crear Reporte
           </a>
         </div>
@@ -37,7 +37,8 @@
           </div>
 
           <div class="col-xs-3">
-            <button type="button" class="btn btn-success btn-lg pull-right"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
+            <input type="file" class="filestyle" size="60" data-input="false" data-buttonBefore="true" data-badge="false" data-buttonText="" data-buttonName="btn-default" data-iconName="glyphicon-camera" data-size="lg">
+            <!-- <button type="button" class="btn btn-default btn-lg pull-right"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button> -->
           </div>
         </div>
 
@@ -168,7 +169,7 @@
 
       </form>
 
-      <button type="button" class="btn btn-primary btn-lg btn-block">Enviar</button>
+      <button type="button" class="btn btn-default btn-lg btn-block">Enviar</button>
 
     </div>
 
@@ -178,6 +179,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/switchery.min.js"></script>
+    <script src="js/bootstrap-filestyle.min.js"></script>
     <script src="//use.typekit.net/kgk4blb.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript">
@@ -186,6 +188,8 @@
       elems.forEach(function(html) {
         var switchery = new Switchery(html);
       });
+      $(":file").filestyle();
+      $(":file").filestyle({badge: false});
     });
     </script>
   </body>
