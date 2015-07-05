@@ -12,7 +12,6 @@ Template.report.author_for = function(report){
   return report.author || "Anónimo";
 }
 
-
 Template.reports.reports = function() {
   return Reports.find({}, {sort: {created_at: -1}});
 }

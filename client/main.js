@@ -1,7 +1,26 @@
 Meteor.subscribe('media');
-
 Template.media_list.media = function(){
   return Media.find();
+}
+
+Template.new.rendered = function(){
+  if(!Session.get('city')){
+    Session.set('city', 'San Pedro Sula')
+    /*
+    navigator.geolocation.getCurrentPosition(function(position){
+      var data = {lat: position.coords.latitude, lon: position.coords.longitude};
+      var res = Meteor.call('reverseGeocode', data, function(res){
+        console.log(res);
+        Session.set('coords', position.coords);
+        Session.set('city', res.city);
+      });
+    });
+    */
+  }
+}
+
+Template.new.city = function(){
+  return Session.get('city') ;
 }
 
 Template.media_list.rendered = function(){
@@ -33,9 +52,10 @@ Template.new.events({
       isAnonymous: $("#isAnonymous").prop("checked")
     };
     //TODO: get this from the native location services?
-    navigator.geolocation.getCurrentPosition(function(position){
-      data.coords = position.coords;
-      Meteor.call('createReport', data);
+    data.city= Session.get('city');
+    data.coords = Session.get('coords');
+    Meteor.call('createReport', data, function(){
+      Router.go('/reports');
     });
   }
 });
