@@ -24,8 +24,9 @@ Meteor.methods({
 
     data.created_at = new Date();
     var id = Reports.insert(data);
+    console.log(id);
 
-    var url = "/reports";
+    var url = "/reports/"+id;
     var author = data.isAnonymous ? "Anónimo" : data.author;
 
     //FIXME: this is an abject hack
