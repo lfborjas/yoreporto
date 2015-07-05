@@ -1,4 +1,5 @@
 Meteor.startup(function(){
+  //TODO: also dynamically add media
   if( Reports.find().count() === 0){
     Reports.insert({
       created_at: new Date("2015-07-04 00:00:00"),

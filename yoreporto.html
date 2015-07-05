@@ -13,11 +13,12 @@
 </body>
 
 <template name="add">
+   <div id="add">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand back" href="index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Regresar</a>
-          <a href="add.html" class="navbar-right navbar-brand">
+          <a class="navbar-brand back" href="/reports"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Regresar</a>
+          <a href="/new" class="navbar-right navbar-brand">
             Crear Reporte
           </a>
         </div>
@@ -26,14 +27,12 @@
 
     <div class="report form">
 
-      <img src="img/test.jpg" class="img-responsive rounded" />
-
       <form action="#" method="post">
         <textarea class="form-control" rows="3" placeholder="Descripción..."></textarea>
         <div class="row">
           <div class="col-xs-9">
             <div class="location">
-              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span>Tegucigalpa</span>
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span>San Pedro Sula</span>
             </div>
           </div>
 
@@ -172,9 +171,11 @@
       <button type="button" class="btn btn-primary btn-lg btn-block">Enviar</button>
 
     </div>
+  </div>
 </template>
 
 <template name="reports">
+  <div id="reports">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -196,6 +197,7 @@
           <span class="loading">Loading...</span>
       </div>
   {{/if}}
+</div>
 </template>
 
 <template name="report">
