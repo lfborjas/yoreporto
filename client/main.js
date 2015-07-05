@@ -4,3 +4,11 @@ Template.add.rendered = function(){
     var switchery = new Switchery(html);
   });
 }
+
+Template.add.events({
+  'click #snap': function(){
+    MeteorCamera.getPicture(function(error, data){
+		$("#preview").attr({src: data});	
+    }); 	  
+  }	
+});
