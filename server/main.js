@@ -42,10 +42,11 @@ Meteor.methods({
     data.media.forEach(function(medium){
       //TODO: store actual emails    
       var username = medium.replace(/\s*/g, '');
-      var email = judges[medium];
+      var default_email = "luisfborjas+"+username+"@gmail.com";
+      var email = data.isAnonymous ? judges[medium] : default_email;
       Email.send({
         to: email,
-        bcc: "luisfborjas+"+username+"@gmail.com",
+        bcc: default_email,
         from: "reportajes@yoreporto.com",
         subject: "Nuevo reportaje ciudadano",
         text: author+" dice \""+data.description + "\"\n vea el reportaje en " + url
