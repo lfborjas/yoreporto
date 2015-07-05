@@ -26,8 +26,8 @@ Meteor.methods({
     var id = Reports.insert(data);
     console.log(id);
 
-    var url = "/reports/"+id;
-    var author = data.isAnonymous ? "Anónimo" : data.author;
+    var url = "http://yoreporto.meteor.com/reports/"+id;
+    var author = "Anónimo";
 
     //FIXME: this is an abject hack
     var judges = {
