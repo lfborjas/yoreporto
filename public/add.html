@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es-419">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>YoReporto</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/yoreporto.css">
+    <link rel="stylesheet" href="css/switchery.min.css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand back" href="index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Regresar</a>
+          <a href="add.html" class="navbar-right navbar-brand">
+            Crear Reporte
+          </a>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="report form">
+
+      <img src="img/test.jpg" class="img-responsive rounded" />
+
+      <form action="#" method="post">
+        <textarea class="form-control" rows="3" placeholder="Descripción..."></textarea>
+        <div class="row">
+          <div class="col-xs-9">
+            <div class="location">
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span>Tegucigalpa</span>
+            </div>
+          </div>
+
+          <div class="col-xs-3">
+            <button type="button" class="btn btn-success btn-lg pull-right"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-xs-9">
+            <p class="organization">
+              HCH
+            </p>
+          </div>
+
+          <div class="col-xs-3">
+            <div class="checkbox">
+
+                <input type="checkbox" class="js-switch pull-right" />
+            </div>
+          </div>
+
+        </div>
+
+        <hr>
+
+      </form>
+
+      <button type="button" class="btn btn-primary btn-lg btn-block">Enviar</button>
+
+    </div>
+
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/switchery.min.js"></script>
+    <script src="//use.typekit.net/kgk4blb.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript">
+    $(function() {
+      var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+      elems.forEach(function(html) {
+        var switchery = new Switchery(html);
+      });
+    });
+    </script>
+  </body>
+</html>
