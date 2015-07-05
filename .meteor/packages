@@ -5,6 +5,9 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
 mrt:bootstrap-3
+iron:router
+jquery
+copleykj:livestamp
+abpetkov:switchery
