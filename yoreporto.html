@@ -1,17 +1,35 @@
 <head>
-  <title>yoreporto</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>YoReporto</title>
+  <link rel="stylesheet" href="yoreporto.css">
 </head>
 
 <body>
-  {{> reports}}
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">YoReporto</a>
+          <a href="#">
+            <button type="button" class="btn btn-default navbar-btn navbar-right pull-right plus">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+          </a>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    {{> reports}}
+
+    <script src="//use.typekit.net/kgk4blb.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
 </body>
 
 <template name="reports">
-  <ul id="reports">
-    {{#each reports}}
-      <li>{{> report}}</li>
-    {{/each}}
-  </ul>
+  {{#each reports}}
+    {{> report}}
+  {{/each}}
 
   {{#if moreResults}}
       <div id="showMoreResults" style="margin-left: 25px;">
@@ -21,6 +39,45 @@
 </template>
 
 <template name="report">
-  {{description}} 
+    <div class="report">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-7 profile">
+            <img src="img/profile.jpg" />
+            <span>{{author}}</span>
+          </div>
+
+          <div class="col-xs-5">
+              <small class="pull-right">{{created_at}}</small>
+          </div>
+        </div>
+
+      </div>
+
+      <img src="img/test.jpg" class="img-responsive" />
+      <div class="content">
+
+
+        <p>
+          {{description}}
+        </p>
+
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="location">
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span>{{city}}</span>
+            </div>
+          </div>
+          <div class="pull-right plus">
+            <div class="btn-group" role="group" >
+              <button type="button" class="btn btn-link"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>
+              <button type="button" class="btn btn-link"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button>
+              <button type="button" class="btn btn-link"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+            </div>
+          </div>
+      </div>
+
+      </div>
+    </div>
 </template>
 
