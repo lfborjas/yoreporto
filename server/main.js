@@ -26,16 +26,29 @@ Meteor.methods({
     var id = Reports.insert(data);
 
     var url = "/reports";
+    var author = data.isAnonymous ? "Anónimo" : data.author;
+
+    //FIXME: this is an abject hack
+    var judges = {
+      "HCH": "byron@acklenavenue.com",
+      "El Heraldo": "ricardo_irias@amazylia.com",
+      "La Tribuna": "mackay3@gmail.com",
+      "La Prensa": "homerorz@hotmail.com",
+      "Abriendo Brecha": "jagbolanos@gmail.com",
+      "Frente a Frente": "alfredo.jones@movitext.com"
+    };
 
     this.unblock();
     data.media.forEach(function(medium){
       //TODO: store actual emails    
       var username = medium.replace(/\s*/g, '');
+      var email = judges[medium];
       Email.send({
-        to: "luisfborjas+"+username+"@gmail.com",
+        to: email,
+        bcc: "luisfborjas+"+username+"@gmail.com",
         from: "reportajes@yoreporto.com",
         subject: "Nuevo reportaje ciudadano",
-        text: data.description + "\n vea el reportaje en " + url
+        text: author+" dice \""+data.description + "\"\n vea el reportaje en " + url
       });
     });
   }
