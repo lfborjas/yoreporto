@@ -22,12 +22,21 @@ Meteor.methods({
       data.author = null;
     }
 
-    data.media.forEach(function(medium){
-      //do something. Deal with the "all" case?
-    });
-
     data.created_at = new Date();
+    var id = Reports.insert(data);
 
-    Reports.insert(data);
+    var url = "/reports";
+
+    this.unblock();
+    data.media.forEach(function(medium){
+      //TODO: store actual emails    
+      var username = medium.replace(/\s*/g, '');
+      Email.send({
+        to: "luisfborjas+"+username+"@gmail.com",
+        from: "reportajes@yoreporto.com",
+        subject: "Nuevo reportaje ciudadano",
+        text: data.description + "\n vea el reportaje en " + url
+      });
+    });
   }
 });

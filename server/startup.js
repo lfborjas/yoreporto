@@ -16,7 +16,7 @@ Meteor.startup(function(){
   if( Media.find().count() === 0){
     Media.insert({
       name: "HCH",
-      image_url: "img/medio01.jpg"
+      image_url: "img/medio01.jpg",
     });
 
     Media.insert({
